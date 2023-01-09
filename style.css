@@ -1,0 +1,170 @@
+#reviewSection {
+  float: right;
+  width: 30%; /* adjust as needed */
+}
+
+#spdxViewTree {
+  float: left;
+  width: 65%; /* adjust as needed */
+    max-width: 70%; /* adjust as needed */
+}
+
+
+#spdxViewTree:after, #reviewSection:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+#submitterComments, #reviewerComments, #reviewStatus {
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #0066cc;
+}
+
+#reviewSection {
+  margin-right: 5%; /* adds a 20px margin to the right side of the element */
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+  background-color: #4CAF50; /* green */
+  border: none;
+  color: white;
+  padding: 1px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 5%;
+}
+
+
+* { 
+	padding: 0;
+	/*border:	0;*/
+	margin:	0;
+	box-sizing:		border-box;
+
+	
+	font-family: "Segoe UI", "Helvetica Neue", "San Francisco", "Ubuntu Regular", "Red Hat Text", Roboto, sans-serif; /* These are the system sans-serif fonts for the common OSes & distros */
+	line-height: 1.3;
+	}
+	
+body { background: #50a8f0; }
+
+div {	padding: 0.5rem 1rem; 
+	}
+#spdxViewTree > div { display: inline-grid; }
+.spdxTag { 
+	background: #80c8ff;
+	color: #204090;
+	margin: 0.75rem 0 0 0;
+	border-radius: 0.5rem;
+	display: inline-block;
+	}
+.spdxTag > .spdxTag { 	
+	background: #b8e8ff; 
+	min-width: 60%;
+	}
+.spdxTag > .spdxTag > .spdxTag { background: #e0f8ff; display: block; }
+
+p  { padding-left: 2rem; }
+h2 { 
+	font-size: 1.125rem;
+	color: #2050a0;
+	}
+.big  { font-size: 1.15rem; }
+.bold { font-weight: bold; } 
+.red  { color: #d02010; }
+.green{ color: #00a060; } 
+
+#tabs { padding: 0; }
+#tabs div { 
+	background: #e0f8ff;
+	margin-right: -0.275rem;	/* inline-block adds an automatic +0.25rem margin that's otherwise invisible to the browser */
+	display: inline-block;
+	border-right: 1px solid #5080c0;
+	}
+#tabs h2 { 
+	cursor: pointer;
+	padding: 0 0.5rem;
+	}
+#tabs .darkened { background: #b0d0f0; }
+
+table, td, th { border: 1px solid #5080c0; }
+table { 
+	background: white;
+	border-collapse: collapse;
+	margin: 0.5rem 0 0.5rem 0;
+	}
+th { background: #c0e0f0; }
+td {
+	vertical-align: top;
+	padding: 0.25rem 0.5rem 0.2rem 0.5rem;
+	border-left: none;
+	border-right: none;
+	}
+td:nth-child(4), td:nth-child(5) { max-width: 30rem; } /* this is for the License & Details, which are currently columns 4/5 */
+td:nth-child(4) { padding-left: 1rem; text-indent: -1rem; } /* to make license list more ruly */
+th {
+	color: #4068c8;
+	padding: 0.2rem;
+	text-shadow: 1px 1px 0px #e0f0f8;
+	background-image: linear-gradient(to bottom, #E0E8F8 0%, #E8F8FF 50%, #D0E0FF 50%, #C0E0F8 100%);
+	}
+tr:hover { background-color: #e0f0ff; }
+
+
+/* Closable Divs to hide information */
+.keytag { 
+	font-size: 1rem; 
+	font-weight: bold;
+	}
+.closer:before {
+	content: '\00A0\25B6'; 
+	width: 2rem;
+	float: left;
+	transform: rotate(0deg);
+	transition: transform 0.25s ease;
+	}
+label { cursor: pointer; }
+
+input[type=checkbox].closable {
+	position: absolute;
+	top: -3rem;
+	left: -3em;
+	opacity: 0.0;
+	}
+input[type=checkbox]:checked + label + div.closable{
+	max-height: 100rem;
+	overflow: shown;
+	margin-bottom: 0rem;
+	transition: all 0.5s ease-in, max-height 1.5s cubic-bezier(0,-1,0,-1) -0.75s;
+	}
+input[type=checkbox]:not(:checked) + label + div.closable {
+	max-height: 0rem;
+	overflow: hidden;
+	opacity: 0;
+	margin-bottom: -1rem;
+	transition: all 0.5s ease-out, max-height 1.25s cubic-bezier(0,1,0,1) -0.5s;
+	}
+input[type=checkbox]:checked + label > h3{
+	border: none;
+	}
+input[type=checkbox]:checked + .closer:before{
+	transform: rotate(90deg);
+	transition: transform 0.25s ease;
+	}
